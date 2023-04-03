@@ -1,0 +1,63 @@
+class Bank1:
+    accno=0 #to store accno
+    name="" #to store name
+    balance=0 #to store balance
+    #function to open an account
+    def openaccno(self):
+        print("Enter Account Number")
+        self.accno=int(input()) #users enters A/C number
+        print("Enter Name:")
+        self.name=input() #user enters name
+        print("Enter starting balance")
+        self.balance=0 #user enter initial amt
+        #function to display acc details
+    def showacc(self):
+        print("user account details of canara bank")
+        print("user accno:",self.accno)
+        print("user name:",self.name)
+        print("balance:",self.balance)
+    #method to deposit
+    def deposit(self):
+        amt=0
+        print("Enter the amount to be deposited")
+        amt=int(input())
+        self.balance+=amt
+        print("balance after deposit:",self.balance)
+    #fuctionalfor withdrawl
+    def withdraw(self):
+        amt=0
+        print("Enter the amount to withdraw")
+        amt=int(input())
+        if self.balance>=amt:
+            self.balance-=amt
+        else:
+            print("Insufficient balance")
+        print("balance after withdraw:",self.balance)
+class Execute:
+    b1=Bank1()
+    print("        😍😍   ")
+    print("  😊😊 WELCOME😊😊  ")
+    print("         😍    ")
+    while True:
+        print("press any key for transection")
+        print("1.initial setup\n 2.show account \n 3.Deposit\n 4.Withdraw\n 5.Exit\n")
+        print("Enter your choice")
+        option=int(input()) #12345
+        match option:
+            case 1:
+                print("Welcome for initial setup")
+                b1.openaccno()
+            case 2:
+                b1.showacc()
+            case 3:
+                b1.deposit()
+            case 4:
+                b1.withdraw()
+            case 5:
+                print("Exiting transactions")
+                break
+                
+                
+                
+                
+                
